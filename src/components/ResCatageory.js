@@ -1,10 +1,9 @@
 import ToogleMenu from "./ToogleMenu";
 import { useState } from "react";
 
-const ResItemHelper = ({ item }) => {
-  const [visible, setVisible] = useState(false);
+const ResCatageory = ({ item, visible, setShowIndex }) => {
   const handleClick = () => {
-    setVisible(!visible);
+    setShowIndex();
   };
   return (
     <div
@@ -22,4 +21,4 @@ const ResItemHelper = ({ item }) => {
     </div>
   );
 };
-export default ResItemHelper;
+export default ResCatageory;
