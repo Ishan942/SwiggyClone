@@ -6,10 +6,7 @@ const ResCatageory = ({ item, visible, setShowIndex }) => {
     setShowIndex();
   };
   return (
-    <div
-      key={item.card.card.id}
-      className="m-3 p-3  border-blue-100 border-b-2 cursor-pointer"
-    >
+    <div className="m-3 p-3  border-blue-100 border-b-2 cursor-pointer">
       <div
         className="flex justify-between font-bold text-lg"
         onClick={handleClick}

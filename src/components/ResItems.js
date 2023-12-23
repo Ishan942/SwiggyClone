@@ -17,6 +17,7 @@ const ResItems = ({ data }) => {
           return (
             //res catageory is now a controlled component state is being passsed by parent
             <ResCatageory
+              key={item.card.card.id}
               item={item}
               visible={index === showIndex ? true : false}
               setShowIndex={() => {

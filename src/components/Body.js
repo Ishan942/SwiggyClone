@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Rescard, { withNewLabel } from "./Rescard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
 const Body = () => {
   const [listofres, setListofres] = useState([]);
   const onlinestatus = useOnlineStatus();
@@ -12,14 +11,11 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      var djson = undefined;
-      while (!djson) {
-        const data = await fetch(
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
 
-        djson = await data.json();
-      }
+      const djson = await data.json();
       const restaurants =
         djson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
